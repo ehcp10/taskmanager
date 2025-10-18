@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('tasks.layout')
 
 @section('content')
     <a href="{{ route('tasks.create') }}" class="btn btn-primary mb-3">Nova Tarefa</a>
@@ -22,7 +22,8 @@
                     <a href="{{ route('tasks.edit', $task) }}" class="btn btn-sm btn-warning">Editar</a>
                     <form action="{{ route('tasks.destroy', $task) }}" method="POST" style="display:inline-block">
                         @csrf @method('DELETE')
-                        <button class="btn btn-sm btn-danger" onclick="return confirm('Excluir tarefa?')">Excluir</button>
+                        <button class="btn btn-sm btn-danger" onclick="return confirm('Excluir tarefa?')">Excluir
+                        </button>
                     </form>
                 </td>
             </tr>
@@ -30,4 +31,3 @@
         </tbody>
     </table>
 @endsection
-<?php

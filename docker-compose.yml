@@ -53,5 +53,15 @@ services:
     depends_on:
       - db
 
+  mailpit:
+    image: axllent/mailpit:v1
+    restart: unless-stopped
+    ports:
+      - "8029:8025" # UI
+      - "1029:1025" # SMTP
+    profiles: [ "tools" ]
+    networks: [ "taskmanager_net" ]
+
+
 volumes:
   pgdata:

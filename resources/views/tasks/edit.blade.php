@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('tasks.layout')
 
 @section('content')
     <form method="POST" action="{{ route('tasks.update', $task) }}">
@@ -13,7 +13,8 @@
             <textarea name="description" class="form-control">{{ $task->description }}</textarea>
         </div>
         <div class="form-check mb-3">
-            <input type="checkbox" name="completed" value="1" class="form-check-input" {{ $task->completed ? 'checked' : '' }}>
+            <input type="checkbox" name="completed" value="1"
+                   class="form-check-input" {{ $task->completed ? 'checked' : '' }}>
             <label class="form-check-label">Concluída</label>
         </div>
         <button class="btn btn-success">Atualizar</button>

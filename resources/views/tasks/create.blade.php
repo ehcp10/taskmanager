@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('tasks.layout')
 
 @section('content')
     <form method="POST" action="{{ route('tasks.store') }}">
